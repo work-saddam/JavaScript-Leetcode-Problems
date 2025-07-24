@@ -13,3 +13,22 @@ function capital(str) {
 }
 // console.log(capital("   with space  "));   
 // console.log(capital("without space"));
+
+//  Q) write a program to convert first letter capital of every word.
+// without using built-in function
+
+function capitalFun(str) {
+  let newStr = "";
+  for (let i = 0; i < str.length; i++) {
+    if(str[i]==" " && (str[i-1]===" "||str[i+1]===" ")){
+      continue;
+    }else if(str[i]!==" " && (str[i-1]===" " || str[i-1]===undefined)){
+      newStr= newStr + str[i].toUpperCase()
+    }else{
+      newStr=newStr + str[i]
+    }
+  }
+  return newStr
+}
+// console.log(capitalFun("   with space  "));
+// console.log(capitalFun("without space"));
