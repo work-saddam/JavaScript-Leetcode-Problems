@@ -53,3 +53,23 @@ function isPalindrome(num) {
 }
 // console.log(isPalindrome(121))     //yes it is a palindrome
 // console.log(isPalindrome(123))     //it is not a palindrome
+
+// Armstrong Number:-----------------------------------------------------------------
+//for a 3-digit number is a number such that the sum of the cubes of its digits is equal to the number itself.
+// Ex: 153 => 1^3 + 5^3 + 3^3
+// Ex: 9474 => 9^4 + 4^4 7^4 + 4^4
+
+function isArmstrong(num) {
+  let digit = num.toString().length;
+  let temp = num;
+  let sum = 0;
+  while (temp > 0) {
+    remainder = temp % 10;
+    sum = sum + (remainder ** digit);
+    temp = Math.floor(temp / 10);
+  }
+
+  return (num === sum) ? "yes Armstrong" : "not Armstrong"
+}
+// console.log(isArmstrong(92727))   //yes Armstrong
+// console.log(isArmstrong(123))   //not Armstrong
