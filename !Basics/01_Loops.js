@@ -38,3 +38,18 @@ function isPrime(n) {
 }
 // console.log(isPrime(7))      //true
 // console.log(isPrime(10))     //false
+
+// Check Palindrome or not:-----------------------------------------------------
+function isPalindrome(num) {
+  let temp = num;
+  let rev = 0;
+  while (temp > 0) {
+    lastDigit = temp % 10;
+    rev = rev * 10 + lastDigit;
+    temp = Math.floor(temp / 10);
+  }
+
+  return rev === num ? "yes it is a palindrome" : "it is not a palindrome";
+}
+// console.log(isPalindrome(121))     //yes it is a palindrome
+// console.log(isPalindrome(123))     //it is not a palindrome
