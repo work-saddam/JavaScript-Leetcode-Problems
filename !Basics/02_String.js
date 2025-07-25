@@ -42,3 +42,10 @@ function reverseString(str) {
   return reversed;
 }
 // console.log(reverseString("hello")); // "olleh"
+
+// using built-in method
+function revString(str) {
+  let res = str.split("").reverse().join("");
+  return res;
+}
+// console.log(revString("hello"));  // "olleh"
