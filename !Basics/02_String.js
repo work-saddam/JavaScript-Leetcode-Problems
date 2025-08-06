@@ -54,6 +54,7 @@ function revString(str) {
 // console.log(revString("hello"));  // "olleh"
 
 // first non repeating character in string --------------------------------------------------------
+// (itterative way)
 function nonRep(str) {
   for (let i = 0; i < str.length; i++) {
     let isPresent = false;
@@ -70,3 +71,20 @@ function nonRep(str) {
   return -1;
 }
 console.log(nonRep("asdasf"));
+
+// using object
+function firstNonReaptingChar(str) {
+  let count = {};
+  for (let char of str) {
+    count[char] = (count[char] || 0) + 1;
+  }
+
+  for (let char of str) {
+    if (count[char] === 1) {
+      return char;
+    }
+  }
+  return -1;
+}
+
+console.log(firstNonReaptingChar("asdasf"));
