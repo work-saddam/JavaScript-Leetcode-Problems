@@ -46,3 +46,24 @@ function k_thLargest(arr, k) {
   return arr[k - 1];
 }
 // console.log(k_thLargest([1,2,4,7,336,32,29], 4))     // 7
+
+// Remove duplicates element from Array:----------------------------------------------------
+function removeDuplicate(arr) {
+  let res = [];
+  for (let i = 0; i < arr.length; i++) {
+    isPresent = false;
+    for (let j = 0; j < res.length; j++) {
+      if (arr[i] === res[j]) {
+        isPresent = true;
+        break;
+      }
+    }
+    if (!isPresent) {
+      res.push(arr[i]);
+    }
+  }
+  return res;
+}
+// console.log(removeDuplicate([2,2,2,2,2]))                     // [2]
+// console.log(removeDuplicate([1 ,2, 2, 3, 4, 4, 4, 5, 5]))     // [1,2,3,4,5]
+// console.log(removeDuplicate([1,2,3]))                         // [1,2,3]
