@@ -38,3 +38,11 @@ function secondMaxMin(arr) {
   console.log("secondMin: ", secondMin);
 }
 // secondMaxMin([2, 4, 3, 7, 5, 4, 8]);    // secondMax: 7 || secondMin: 3
+
+// k-th largest/smallest element.:----------------------------------------------
+// not good approach for interviews!!!
+function k_thLargest(arr, k) {
+  arr.sort((a, b) => b - a);
+  return arr[k - 1];
+}
+// console.log(k_thLargest([1,2,4,7,336,32,29], 4))     // 7
