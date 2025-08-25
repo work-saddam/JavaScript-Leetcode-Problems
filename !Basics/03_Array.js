@@ -67,3 +67,28 @@ function removeDuplicate(arr) {
 // console.log(removeDuplicate([2,2,2,2,2]))                     // [2]
 // console.log(removeDuplicate([1 ,2, 2, 3, 4, 4, 4, 5, 5]))     // [1,2,3,4,5]
 // console.log(removeDuplicate([1,2,3]))                         // [1,2,3]
+
+// find duplicate element in array (without sort):----------------------------------------------
+function findDuplicate(arr) {
+  let res = [];
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] === arr[j]) {
+        let isPresent = false;
+        for (let k = 0; k < res.length; k++) {
+          if (arr[i] === res[k]) {
+            isPresent = true;
+            break;
+          }
+        }
+        if (!isPresent) {
+          res.push(arr[i]);
+        }
+      }
+    }
+  }
+  return res;
+}
+// console.log(findDuplicate([2, 2, 2, 2, 2]));                //[2]
+// console.log(findDuplicate([1, 2, 2, 3, 4, 4, 4, 5, 5]));    //[2,4,5]
+// console.log(findDuplicate([1, 2, 3]));                      //[]
