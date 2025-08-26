@@ -125,3 +125,23 @@ function occurence(arr) {
 // console.log(occurence([2, 2, 2, 2, 2]));  // { '2': 5 }
 // console.log(occurence([1, 2, 2, 3, 4, 4, 4, 5, 5]));  // { '1': 1, '2': 2, '3': 1, '4': 3, '5': 2 }
 // console.log(occurence([1, 2, 3]));  // { '1': 1, '2': 1, '3': 1 }
+
+// Find Missing Number in Array (1 to N):--------------------------------------------------------
+function missingNum(arr) {
+  let n = arr.length;
+  for (let i = 1; i <= n; i++) {
+    isPresent = false;
+    for (let j = 0; j < n; j++) {
+      if (i === arr[j]) {
+        isPresent = true;
+        break;
+      }
+    }
+    if (!isPresent) {
+      return i;
+    }
+  }
+  return -1;
+}
+// console.log(missingNum([8, 2, 4, 5, 3, 7, 1]));     // 6
+// console.log(missingNum([8, 2, 4, 5, 6, 3, 7, 1]));  // -1
