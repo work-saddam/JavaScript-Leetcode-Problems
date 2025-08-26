@@ -113,3 +113,15 @@ function bubbleSort(arr) {
   return arr;
 }
 // console.log(bubbleSort([5, 3, 7, 8, 3, 1]))   // [ 1, 3, 3, 5, 7, 8 ]
+
+// Count Occurrences of Each Element:----------------------------------------------------------
+function occurence(arr) {
+  let count = {};
+  for (let ele of arr) {
+    count[ele] = (count[ele] || 0) + 1;
+  }
+  return count;
+}
+// console.log(occurence([2, 2, 2, 2, 2]));  // { '2': 5 }
+// console.log(occurence([1, 2, 2, 3, 4, 4, 4, 5, 5]));  // { '1': 1, '2': 2, '3': 1, '4': 3, '5': 2 }
+// console.log(occurence([1, 2, 3]));  // { '1': 1, '2': 1, '3': 1 }
