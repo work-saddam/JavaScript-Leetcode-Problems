@@ -167,3 +167,39 @@ function flat(arr, n) {
 // console.log(flat([1,2,[3,4],[5,[6,7],8],9], 1))     // [ 1, 2, 3, 4, 5, [ 6, 7 ], 8, 9 ]
 // console.log(flat([1,2,[3,4],[5,[6,7],8],9], 2))     //  [1, 2, 3, 4, 5, 6, 7, 8, 9]
 // console.log(flat([1,2,[3,4],[5,[6,7],8],9], 3))     //  [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+// merge two sorted arrays in js:----------------------------------------------------------
+function mergeSortedArrays(arr1, arr2) {
+  const mergeArray = [];
+  let i = 0;
+  let j = 0;
+
+  while (i < arr1.length && j < arr2.length) {
+    if (arr1[i] < arr2[j]) {
+      mergeArray.push(arr1[i]);
+      i++;
+    } else {
+      mergeArray.push(arr2[j]);
+      j++;
+    }
+  }
+
+  // Add remaining elements from arr1 (if any)
+  while (i < arr1.length) {
+    mergeArray.push(arr1[i]);
+    i++;
+  }
+
+  // Add remaining elements from arr2 (if any)
+  while (j < arr2[j]) {
+    mergeArray.push(arr2[j]);
+    j++;
+  }
+
+  return mergeArray;
+}
+
+const array1 = [1, 3, 5, 7];
+const array2 = [2, 6, 8];
+const result = mergeSortedArrays(array1, array2);
+// console.log(result); // Output: [1, 2, 3, 4, 5, 6, 7, 8]
