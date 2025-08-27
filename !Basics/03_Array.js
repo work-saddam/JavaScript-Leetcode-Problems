@@ -145,3 +145,25 @@ function missingNum(arr) {
 }
 // console.log(missingNum([8, 2, 4, 5, 3, 7, 1]));     // 6
 // console.log(missingNum([8, 2, 4, 5, 6, 3, 7, 1]));  // -1
+
+// Flattening Nested Arrays:-----------------------------------------------------------------
+// Using Recursion!!
+// n = depth
+function flat(arr, n) {
+  if (n === 0) {
+    return arr;
+  }
+
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (n > 0 && Array.isArray(arr[i])) {
+      result.push(...flat(arr[i], n - 1));
+    } else {
+      result.push(arr[i]);
+    }
+  }
+  return result;
+}
+// console.log(flat([1,2,[3,4],[5,[6,7],8],9], 1))     // [ 1, 2, 3, 4, 5, [ 6, 7 ], 8, 9 ]
+// console.log(flat([1,2,[3,4],[5,[6,7],8],9], 2))     //  [1, 2, 3, 4, 5, 6, 7, 8, 9]
+// console.log(flat([1,2,[3,4],[5,[6,7],8],9], 3))     //  [1, 2, 3, 4, 5, 6, 7, 8, 9]
