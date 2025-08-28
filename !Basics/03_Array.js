@@ -233,3 +233,29 @@ function rotateclockwise(arr, k) {
   return arr;
 }
 // console.log(rotateclockwise([1, 2, 3, 4, 5, 6], 2)); //[ 5, 6, 1, 2, 3, 4 ]
+
+// Convert Roman to Integer:----------------------------------------------------
+function romanToInteger(s) {
+  // create a map to store the Roman numeral values
+  const romanMap = {
+    I: 1,
+    V: 2,
+    X: 10,
+    L: 50,
+    C: 100,
+    D: 500,
+    M: 1000,
+  };
+
+  let result = 0;
+  for (let i = 0; i < s.length; i++) {
+    if (i + 1 < s.length && romanMap[s[i]] < romanMap[s[i + 1]]) {
+      result += romanMap[s[i + 1]] - romanMap[s[i]];
+      i++; //skip the next number
+    } else {
+      result += romanMap[s[i]];
+    }
+  }
+  return result;
+}
+// console.log(romanToInteger("LIX"))   //59
