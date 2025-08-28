@@ -203,3 +203,33 @@ const array1 = [1, 3, 5, 7];
 const array2 = [2, 6, 8];
 const result = mergeSortedArrays(array1, array2);
 // console.log(result); // Output: [1, 2, 3, 4, 5, 6, 7, 8]
+
+// Rotate Array (Clockwise/Anti-clockwise by K steps):---------------------------------------------
+function rotateclockwise(arr, k) {
+  let n = arr.length;
+  k = k % n;
+
+  function reverse(arr, start, end) {
+    while (start < end) {
+      let temp = arr[start];
+      arr[start] = arr[end];
+      arr[end] = temp;
+      start++;
+      end--;
+    }
+  }
+
+  // reverse last k numbers   //for Clockwise
+  reverse(arr, n - k, n - 1);
+  // reverse(arr, 0, k-1)     //for Anti-clockwise
+
+  // reverse the first n-k terms   //for Clockwise
+  reverse(arr, 0, n - k - 1);
+  // reverse(arr, k, n-1)     //for Anti-clockwise
+
+  // reverse the entire array
+  reverse(arr, 0, n - 1);
+
+  return arr;
+}
+// console.log(rotateclockwise([1, 2, 3, 4, 5, 6], 2)); //[ 5, 6, 1, 2, 3, 4 ]
