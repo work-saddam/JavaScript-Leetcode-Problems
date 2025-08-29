@@ -259,3 +259,14 @@ function romanToInteger(s) {
   return result;
 }
 // console.log(romanToInteger("LIX"))   //59
+
+// Convert Binary to Decimal:---------------------------------------------------------------
+function binaryToDecimal(n) {
+  let decimal = 0;
+  for (let i = 0; i < n.length; i++) {
+    const digit = parseInt(n[n.length - 1 - i]);
+    decimal += digit * 2 ** i;
+  }
+  return decimal;
+}
+// console.log(binaryToDecimal("1101"))  //13
