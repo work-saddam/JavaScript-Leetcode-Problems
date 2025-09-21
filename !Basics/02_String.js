@@ -58,8 +58,8 @@ function revString(str) {
 function nonRep(str) {
   for (let i = 0; i < str.length; i++) {
     let isPresent = false;
-    for (let j = i + 1; j < str.length; j++) {
-      if (str[i] === str[j]) {
+    for (let j = 0; j < str.length; j++) {
+      if (i !== j && str[i] === str[j]) {
         isPresent = true;
         break;
       }
@@ -70,7 +70,7 @@ function nonRep(str) {
   }
   return -1;
 }
-console.log(nonRep("asdasf"));
+console.log(nonRep("asddgasf"));
 
 // using object
 function firstNonReaptingChar(str) {
@@ -87,4 +87,4 @@ function firstNonReaptingChar(str) {
   return -1;
 }
 
-console.log(firstNonReaptingChar("asdasf"));
+console.log(firstNonReaptingChar("asddgasf"));
