@@ -93,6 +93,25 @@ function findDuplicate(arr) {
 // console.log(findDuplicate([1, 2, 2, 3, 4, 4, 4, 5, 5]));    //[2,4,5]
 // console.log(findDuplicate([1, 2, 3]));                      //[]
 
+// find duplicate element in array (using Object):-----------------------------------------
+function findDuplicates(arr) {
+  const seen = {};
+  const duplicates = [];
+  for (let num of arrr) {
+    if (seen[num]) {
+      if (!duplicates.includes(num)) {
+        duplicates.push(num);
+      }
+    } else {
+      seen[num] = true;
+    }
+  }
+  return duplicates;
+}
+// console.log(findDuplicate([2, 2, 2, 2, 2])); //[2]
+// console.log(findDuplicate([1, 2, 2, 3, 4, 4, 4, 5, 5])); //[2,4,5]
+// console.log(findDuplicate([1, 2, 3])); //[]
+
 // Bubble Sorting (https://www.youtube.com/watch?v=p__ETf2CKY4&t):----------------------------------
 function bubbleSort(arr) {
   let n = arr.length;
