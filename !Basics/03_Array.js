@@ -68,6 +68,20 @@ function removeDuplicate(arr) {
 // console.log(removeDuplicate([1 ,2, 2, 3, 4, 4, 4, 5, 5]))     // [1,2,3,4,5]
 // console.log(removeDuplicate([1,2,3]))                         // [1,2,3]
 
+// Remove duplicates element from Array (using includes):--------------------------------------
+function removeDuplicates(arr) {
+  const res = [];
+  for (let num of arr) {
+    if (!res.includes(num)) {
+      res.push(num);
+    }
+  }
+  return res;
+}
+// console.log(removeDuplicates([2, 2, 2, 2, 2]));                // [2]
+// console.log(removeDuplicates([1, 2, 2, 3, 4, 4, 4, 5, 5]));    // [1,2,3,4,5]
+// console.log(removeDuplicates([1, 2, 3]));                      // [1,2,3]
+
 // find duplicate element in array (without sort):----------------------------------------------
 function findDuplicate(arr) {
   let res = [];
@@ -97,7 +111,7 @@ function findDuplicate(arr) {
 function findDuplicates(arr) {
   const seen = {};
   const duplicates = [];
-  for (let num of arrr) {
+  for (let num of arr) {
     if (seen[num]) {
       if (!duplicates.includes(num)) {
         duplicates.push(num);
@@ -108,9 +122,9 @@ function findDuplicates(arr) {
   }
   return duplicates;
 }
-// console.log(findDuplicate([2, 2, 2, 2, 2])); //[2]
-// console.log(findDuplicate([1, 2, 2, 3, 4, 4, 4, 5, 5])); //[2,4,5]
-// console.log(findDuplicate([1, 2, 3])); //[]
+// console.log(findDuplicates([2, 2, 2, 2, 2]));                     //[2]
+// console.log(findDuplicates([1, 2, 2, 3, 4, 4, 4, 5, 5]));         //[2,4,5]
+// console.log(findDuplicates([1, 2, 3]));                           //[]
 
 // Bubble Sorting (https://www.youtube.com/watch?v=p__ETf2CKY4&t):----------------------------------
 function bubbleSort(arr) {
