@@ -68,7 +68,7 @@ function removeDuplicate(arr) {
 // console.log(removeDuplicate([1 ,2, 2, 3, 4, 4, 4, 5, 5]))     // [1,2,3,4,5]
 // console.log(removeDuplicate([1,2,3]))                         // [1,2,3]
 
-// Remove duplicates element from Array (using map):--------------------------------------
+// Remove duplicates element from Array (using Map):--------------------------------------
 function removeDuplicates(arr) {
   const map = new Map()
   const res = []
@@ -109,20 +109,17 @@ function findDuplicate(arr) {
 // console.log(findDuplicate([1, 2, 2, 3, 4, 4, 4, 5, 5]));    //[2,4,5]
 // console.log(findDuplicate([1, 2, 3]));                      //[]
 
-// find duplicate element in array (using Object):-----------------------------------------
-function findDuplicates(arr) {
-  const seen = {};
-  const duplicates = [];
-  for (let num of arr) {
-    if (seen[num]) {
-      if (!duplicates.includes(num)) {
-        duplicates.push(num);
-      }
-    } else {
-      seen[num] = true;
+// find duplicate element in array (using Map):-----------------------------------------
+const findDuplicates = (arr) => {
+  const map = new Map()
+  const res = []
+  for(let num of arr){
+    map.set(num,(map.get(num)||0)+1)
+    if(map.get(num) ===2){
+      res.push(num)
     }
   }
-  return duplicates;
+  return res
 }
 // console.log(findDuplicates([2, 2, 2, 2, 2]));                     //[2]
 // console.log(findDuplicates([1, 2, 2, 3, 4, 4, 4, 5, 5]));         //[2,4,5]
