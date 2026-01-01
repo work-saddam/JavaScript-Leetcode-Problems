@@ -68,15 +68,17 @@ function removeDuplicate(arr) {
 // console.log(removeDuplicate([1 ,2, 2, 3, 4, 4, 4, 5, 5]))     // [1,2,3,4,5]
 // console.log(removeDuplicate([1,2,3]))                         // [1,2,3]
 
-// Remove duplicates element from Array (using includes):--------------------------------------
+// Remove duplicates element from Array (using map):--------------------------------------
 function removeDuplicates(arr) {
-  const res = [];
-  for (let num of arr) {
-    if (!res.includes(num)) {
-      res.push(num);
+  const map = new Map()
+  const res = []
+  for(let num of arr){
+    if(!map.has(num)){
+      map.set(num,true)
+      res.push(num)
     }
   }
-  return res;
+  return res
 }
 // console.log(removeDuplicates([2, 2, 2, 2, 2]));                // [2]
 // console.log(removeDuplicates([1, 2, 2, 3, 4, 4, 4, 5, 5]));    // [1,2,3,4,5]
