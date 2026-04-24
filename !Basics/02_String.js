@@ -11,6 +11,15 @@ function capital(str) {
   res = word.join(" ");
   return res;
 }
+
+function capital(str) {
+  return str
+    .trim()
+    .split(" ")
+    .map(word => word ? word[0].toUpperCase() + word.slice(1) : "")
+    .join(" ")
+}
+
 // console.log(capital("   with space  "));
 // console.log(capital("without space"));
 
