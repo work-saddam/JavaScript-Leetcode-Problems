@@ -314,3 +314,37 @@ function decimalToBinary(n) {
   return binary;
 }
 // console.log(decimalToBinary(13))  //1101
+
+// ::::::: OBJECT :::::::
+// merger the object & if key are same then merge it too... ------------------------------------
+obj1 = { name: "Mani", age: 32, location: { state: "TN" } };
+obj2 = { department: "IT", location: { city: "Chennai" } };
+
+function enhanceObject(obj1, obj2) {
+  const newObj = { ...obj1 };
+  for (let key in obj2) {
+    if (Object.keys(obj1).includes(key)) {
+      const res = { ...obj1[key], ...obj2[key] };
+      newObj[key] = res;
+    } else {
+      newObj[key] = obj2[key];
+    }
+  }
+
+  for (let key in newObj) {
+    if (typeof newObj[key] === "string") {
+      newObj[key] =
+        newObj[key][0].toLowerCase() + newObj[key].substring(1).toUpperCase();
+    } else if (typeof newObj[key] === "object") {
+      for (let item in newObj[key]) {
+        newObj[key][item] =
+          newObj[key][item][0].toLowerCase() +
+          newObj[key][item].substring(1).toUpperCase();
+      }
+    }
+  }
+
+  return newObj;
+}
+
+// console.log(enhanceObject(obj1, obj2));
