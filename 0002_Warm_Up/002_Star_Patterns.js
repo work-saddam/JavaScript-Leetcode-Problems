@@ -108,3 +108,34 @@ function pattern4(n) {
   }
 }
 // pattern4(5);
+
+/* Pattern5:
+------------
+1
+01
+010
+1010
+10101
+------------
+*/
+
+// Solution 5:-----------------------------------------------------------------------
+
+function pattern5(n) {
+  let toogle = 1;
+
+  for (let i = 1; i <= n; i++) {
+    let row = "";
+
+    for (let j = 1; j <= i; j++) {
+      row += toogle;
+      if (toogle === 1) {
+        toogle = 0;
+      } else {
+        toogle = 1;
+      }
+    }
+    console.log(row);
+  }
+}
+// pattern5(5);
