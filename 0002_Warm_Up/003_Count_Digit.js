@@ -1,4 +1,4 @@
-// Qus. count the digits.
+// Q. count the digits.
 
 // ASK:
 // what if the num is 0.
