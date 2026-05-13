@@ -66,8 +66,8 @@ function removeDuplicates(nums) {
   return x + 1;
 }
 
-console.log(removeDuplicates([1, 1, 2])); //2
-console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4])); //5
+console.log(removeDuplicates([1, 1, 2])); //2 => nums=[ 1, 2, 2 ]
+console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4])); //5 => nums=[ 0, 1, 2, 3, 4, 2, 2, 3, 3, 4 ]
 
 // Time Complexity: O(n) where n is the length of the input array.
 // Space Complexity: O(1) since we are modifying the input array in-place and not using any additional data structures.
